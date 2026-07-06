@@ -1,10 +1,21 @@
 <?php
 
-function inverterTexto($textoOriginal, $textoInvertido){
+function inverterTexto($texto){
+
+$textoInvertido = strrev($texto);
+$quantCaracteres = mb_strlen($texto, 'UTF-8');
+
+ return [
+        'textoInvertido' => $textoInvertido,
+        'quantidade' => $quantidadeCaracteres
+    ];
+}
 
 $textoOriginal = "Oi Pro Icare";
-$textoInvertido = strrev($textoOriginal);
+$resultado = inverterTexto($textoOriginal);
 
-echo "Texto original:"
-}
+echo "Texto original: $textoOriginal <br> ";
+echo "Texto invertido: $resultado['textoInvertido'] <br><br>";
+echo "Quantidade de caracteres: $resultado['quantidade']"  ;
+
 ?>
